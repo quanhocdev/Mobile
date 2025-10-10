@@ -5,17 +5,13 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
@@ -34,8 +30,6 @@ fun App() {
     var ten by remember { mutableStateOf("") }
     var tuoi by remember { mutableStateOf("") }
     var ketqua by remember { mutableStateOf("")}
-    var numbers by remember { mutableStateOf(listOf<Int>()) }
-
     var errorMessage by remember { mutableStateOf("") } // 🔹 biến lưu thông báo lỗi
     Column(
         modifier = Modifier
@@ -106,7 +100,7 @@ fun App() {
                 TextField(
                     value = tuoi,    // giá trị của ô
                     onValueChange = {
-                        tuoi = it;  // mỗi lần đổi nội dung thì biến input đổi theo
+                        tuoi = it  // mỗi lần đổi nội dung thì biến input đổi theo
                         errorMessage = ""
                     },  // Xóa lỗi khi người dùng nhập lại
                     modifier = Modifier
@@ -151,7 +145,7 @@ fun App() {
                 )
             } else if (ketqua.isNotEmpty()) {
                 Text(
-                    text = "Kết quả: "+ ten + " là "+ ketqua,
+                    text = "Kết quả: $ten là $ketqua",
                     color = Color.Blue,
                     style = MaterialTheme.typography.bodyMedium,
                     modifier = Modifier.padding(top = 10.dp)
