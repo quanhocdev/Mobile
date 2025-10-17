@@ -76,26 +76,26 @@ fun App() {
             )
         }
         Spacer(modifier = Modifier.height(5.dp))
-            Button(
-                onClick = {
-                    val n = input
-                    if (n.isEmpty()){
-                        errorMessage = "Email không hợp lệ" // 🔹 báo lỗi
-                        ketqua = ""
-                    }
-                    else if (!n.contains("@") || n.count {it == '@'} > 1) {
-                        errorMessage = "Email không đúng dạng"
-                        ketqua = ""
-                    }
-                    else{
-                        errorMessage = ""
-                        ketqua = "Email hợp lệ"
-                    }
-                },
-                modifier = Modifier.padding(top = 8.dp)
-            ) {
-                Text("Kiểm tra")
-            }
+        Button(
+            onClick = {
+                val n = input
+                if (n.isEmpty()){
+                    errorMessage = "Email không hợp lệ" // 🔹 báo lỗi
+                    ketqua = ""
+                }
+                else if (!n.contains("@") || n.count {it == '@'} > 1) {
+                    errorMessage = "Email không đúng dạng"
+                    ketqua = ""
+                }
+                else{
+                    errorMessage = ""
+                    ketqua = "Email hợp lệ"
+                }
+            },
+            modifier = Modifier.padding(top = 8.dp)
+        ) {
+            Text("Kiểm tra")
+        }
 
 
 
