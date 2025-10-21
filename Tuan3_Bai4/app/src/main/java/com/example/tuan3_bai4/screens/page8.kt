@@ -50,7 +50,6 @@ fun page8(navController: NavController) {
 
         Spacer(modifier = Modifier.height(30.dp))
 
-        // 🔹 Ví dụ: Thể hiện rõ Box layout
         Box(
             modifier = Modifier
                 .fillMaxWidth()
